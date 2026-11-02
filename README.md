@@ -20,8 +20,12 @@ through ZeroMQ.
 ## Not included
 
 Simulation outputs (`.out`, `.outb`, `Results/`, MLife workbooks), the trained GPR residual models
-(`gpr_residual_*.mat`, larger than GitHub's limit) and the FAST.Farm / OpenFAST / ROSCO binaries.
+(`gpr_residual_*.mat`, larger than GitHub's limit) and the FAST.Farm / OpenFAST executables.
 Paths inside the scripts are absolute paths of the author's machines and must be adapted.
+
+The compiled ROSCO controller libraries used by the three turbines (`libdiscon.T*.so`, Linux, in
+`wind_turbines/T*/turbine_controllers/ins/`) are included; ROSCO is distributed under its own license
+(Apache 2.0, <https://github.com/NREL/ROSCO>).
 
 ## Requirements
 
