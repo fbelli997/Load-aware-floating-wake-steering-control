@@ -1,0 +1,17 @@
+# simulation outputs and large data (not versioned)
+*.out
+*.outb
+*.xlsx
+*.zip
+*.joblib
+*.asv
+*.bak
+*.log
+*.vtk
+*.bts
+Results/
+figures*/
+__pycache__/
+# large trained models / workspaces
+matlab_workspace.mat
+gpr_residual_*.mat

@@ -1,0 +1,98 @@
+% Copyright (C) <2024>, M Becker
+%
+% List of the contributors to the development of FLORIDyn: see LICENSE file.
+% Description and complete License: see LICENSE file.
+	
+% This program (FLORIDyn) is free software: you can redistribute it and/or modify
+% it under the terms of the GNU Affero General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU Affero General Public License for more details.
+
+% You should have received a copy of the GNU Affero General Public License
+% along with this program (see COPYING file).  If not, see <https://www.gnu.org/licenses/>.
+% ======================================================================= %
+% Updated: 16. Dez. 2024, M. Becker
+% ======================================================================= %
+
+function Tdep = findTurbineGroups(nT, posBase, States_OP ,StartI, States_WF, D, nOP, paramFLORIDyn)
+%FINDTURBINEGROUPS determines which turbines are influencing the i-th
+%turbine. All turbines +10D upstream and +-3D crossstream are considered. 
+% =============== INPUTS ================================================ %
+%   T       Turbine OP and wind field data
+%   paramFLORIDyn
+%       .deltaDW  Down Wind Diameters distance from closest OP to be influenced
+%       .deltaCW  Cross Wind Diameters distance from closest OP t.b.infl.
+%       .deltaUW  Up Wind Diameters distance from closest OP t.b.infl.
+% =============== OUTPUTS =============================================== %
+%   Tdep    Dependencies
+% ======================================================================= %
+dw = paramFLORIDyn.deltaDW;
+cw = paramFLORIDyn.deltaCW;
+uw = paramFLORIDyn.deltaUW;
+
+
+Tdep = cell(nT,1);
+dep = false(nT);
+R01 =@(phi) [cos(phi) sin(phi); -sin(phi) cos(phi)];
+for iT = 1:nT
+    for iiT = 1:nT
+        % for every other turbine find out if they less than the threshold
+        % away from the centerline
+        if iiT == iT; continue; end
+        
+        % find closest OP from the wake of turbine iT to turbine iiT and 
+        %   extract index
+        distOP_iiT = sum((...
+            posBase(iiT,1:2) - States_OP((0:nOP-1)+StartI(iT),1:2)...
+            ).^2,2);
+        [~,I_op] = min(distOP_iiT);
+        
+        % Calculate the vector from the Turbine to the OP
+        I_op = I_op + StartI(iT) - 1;
+        phi  = angSOWFA2world(States_WF(I_op,2));
+        r0   = States_OP(I_op,1:2) - posBase(iiT,1:2);
+
+        % Roate the vector in down-/crossstream coordinates
+        r1   = R01(phi)*r0';
+        
+        % r1(1) downstream distance: pos -> OP is downstream
+        %                            neg -> OP is upstream
+        % r1(2) crosstream distance
+        if and(and( ...                     % Distance checks
+                -r1(1) <= uw*D(iT), ...   % -> Upstream distance 
+                 r1(1) <= dw*D(iT)), ...  % -> Downstream distance
+                abs(r1(2)) <= cw*D(iT)... % -> Crosswind distance
+                )
+            dep(iiT,iT) = true;
+        end
+
+        %% Old caluclation
+        % r1 = abs(R01(phi)*r0');
+        
+        % Note for future
+        %   In this code the up-/down-stream distance and cross-stream
+        %   distance are checkt to determine if there might be an impact of
+        %   the OP of turbine iT onto turbine iiT. r(1) is the up-/down-
+        %   stream distance, r(2) cross-stream. Since the absolute is
+        %   taken, and the distance is chosen generously, dependencies can
+        %   be suggested where a downstream wake would impact an upstream
+        %   turbine. This is prevented at a later stage, but the fact that
+        %   it is recorded can cause issues if the 'influence' correction
+        %   is used for wind field variables.
+
+        % if and(r1(1)<=dw*T.D(iT),r1(2)<=cw*T.D(iT)) %and(and(abs(r1(1))<=dw*T.D(iT), r1(1)<0), abs(r1(2))<=cw*T.D(iT)) 
+        %     dep(iiT,iT) = true;
+        % end
+    end
+end
+
+for iT = 1:nT
+    Tdep{iT} = find(dep(iT,:));
+end
+end
+

@@ -1,0 +1,784 @@
+%% ================== FASTFarm =====================
+@techreport{platform_1,
+  author       = {{Allen, Christopher and Viscelli, Anthony and Dagher, Habib and Goupee, Andrew and Gaertner, Evan and Abbas, Nikhar and Hall, Matthew and Barter, Garrett}},
+  title        = {Definition of the UMaine VolturnUS-S Reference Platform Developed for the IEA Wind 15-Megawatt Offshore Reference Wind Turbine},
+  institution  = {National Renewable Energy Laboratory (NREL), Golden, CO (United States); Univ. of Maine, Orono, ME (United States)},
+  annote       = {The following report defines the UMaine VolturnUS-S reference floating offshore wind turbine (FOWT) semi-submersible designed to support the IEA-15-240-RWT 15-megawatt (MW) reference turbine. The semi-submersible is a generic steel version of the UMaine patented concrete floating foundation technology developed by the US Department of Energy. This report serves as an addendum to the previously published report, NREL/TP-5000-75698 IEA Wind TCP Task 37: Definition of the IEA Wind 15-Megawatt Offshore Reference Wind Turbine, and provides details on a floating semi-submersible design developed to support the15MW reference wind turbine.},
+  doi          = {10.2172/1660012},
+  place        = {United States},
+  year         = {2020},
+  month        = {07}}
+
+
+@article{Dynamic_wake_meandering,
+author = {Larsen, Gunner C. and Madsen, Helge Aa. and Thomsen, Kenneth and Larsen, Torben J.},
+title = {Wake meandering: a pragmatic approach},
+journal = {Wind Energy},
+volume = {11},
+number = {4},
+pages = {377-395},
+keywords = {wake, wake meandering, wake reflection, wake turbulence, wind farm, wind turbine loading, wind turbine production},
+doi = {https://doi.org/10.1002/we.267},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/we.267},
+abstract = {Abstract The phenomenon of wake meandering is long known empirically, but has so far not been treated in a satisfactory manner on the wind turbine load modelling side. We present a consistent, physically based theory for wake meandering, which we consider of crucial importance for the overall description of wind turbine loadings in wind farms. In its present version, the model is confined to single wake situations—including a simple heuristic description of wake interaction with a reflecting surface. Contrary to previous attempts to model wind turbine wake loading, the present approach opens for a unifying description in the sense that turbine power and load aspects can be treated simultaneously. This capability is a direct and attractive consequence of the model being based on the underlying physical process, and it potentially opens for optimization of wind farm topology, wind farm operation, as well as control strategies for the individual turbine. The application of the proposed dynamic wake meandering methodology with existing aeroelastic codes is straightforward and does not involve any code modifications. The strategy is simply to embed the combined effect of atmospheric turbulence, added wake turbulence and the intermittent ‘turbulence contribution’, caused by wake meandering, in files replacing the traditional turbulence file input to aeroelastic computations. Copyright © 2008 John Wiley \& Sons, Ltd.},
+year = {2008}
+}
+
+@misc{openFAST,
+  author       = {Jonkman, B. and Mudafort, R. M. and Platt, A. and Branlard, E. 
+                  and Sprague, M. and Jonkman, J. and Vijayakumar, G. and Buhl, M. 
+                  and Ross, H. and Bortolotti, P. and Masciola, M. and Ananthan, S. 
+                  and Schmidt, M. J. and Rood, J. and Damiani, R. and Mendoza, N. 
+                  and Hall, M. and Corniglion, R.},
+  title        = {{OpenFAST v4.2: Open-source wind turbine simulation tool}},
+  year         = {2025}
+}
+
+
+@article{Ebrahimi_2026,
+doi = {10.1088/1742-6596/3224/3/032133},
+url = {https://doi.org/10.1088/1742-6596/3224/3/032133},
+year = {2026},
+month = {may},
+publisher = {IOP Publishing},
+volume = {3224},
+number = {3},
+pages = {032133},
+author = {Ebrahimi, Majid and Bellini, Federico and Fontanella, Alessandro and Ambrosini, Simone and Muggiasca, Sara and Belloli, Marco},
+title = {Transfer Learning for Centralized Deep Reinforcement Learning Wind Farm Control with FLORIS and FAST.Farm},
+journal = {Journal of Physics: Conference Series},
+abstract = {Wake steering is a promising wind-farm control strategy for increasing total power production by intentionally yawing upstream turbines to redirect their wakes away from downstream machines. While low-fidelity engineering models enable efficient controller development, they cannot fully capture the wake dynamics and turbine interactions represented by higher-fidelity simulators. This limitation is particularly relevant for floating offshore wind farms, where wake behaviour is further influenced by platform motion and is generally more difficult to model than in bottom-fixed installations. This work presents a transfer-learning framework for centralized reinforcement-learning-based wake steering, built on the existing Wind Farm Control Reinforcement Learning (WFCRL) framework. The main contribution is the introduction of a centralized RL algorithm into WFCRL through a unified RL environment, enabling a consistent observation–action interface across simulation fidelities. In addition, for the IEA 15 MW reference wind turbine controlled by ROSCO, a ZeroMQ-based communication interface is developed and integrated into the WFCRL environment to exchange measurements and yaw-control commands between the RL agent and the simulator. This results in a unified workflow that connects FLORIS, FAST.Farm, and WFCRL for transfer learning in wind-farm wake steering. A centralized policy is first trained in FLORIS and then transferred to FAST.Farm for implementation and subsequent fine-tuning on a four-turbine floating wind-farm layout based on the IEA 15 MW turbine. The results show that low-fidelity pre-training provides an effective initialization for higher-fidelity learning. Policy implementation in FAST.Farm increases mean farm power by 7.5% relative to the greedy baseline, while subsequent fine-tuning in FAST.Farm raises the gain to 8.75%, corresponding to a further 1.25% improvement.}
+}
+
+
+@article{Bellini_2026,
+doi = {10.1088/1742-6596/3224/3/032081},
+url = {https://doi.org/10.1088/1742-6596/3224/3/032081},
+year = {2026},
+month = {may},
+publisher = {IOP Publishing},
+volume = {3224},
+number = {3},
+pages = {032081},
+author = {Bellini, Federico and Ebrahimi, Majid and Giuseppe, Pierpaolo Di and Fontanella, Alessandro and Muggiasca, Sara and Belloli, Marco},
+title = {Closed-loop Wind farm control for floating turbines via online yaw and induction setpoint optimization},
+journal = {Journal of Physics: Conference Series},
+abstract = {This paper investigates closed-loop wind-farm control for floating wind turbines via online setpoint optimization of yaw setpoints for wake steering and turbine derating for induction control. A FLORIS-based supervisory controller is coupled to a mid-fidelity floating wind-farm plant simulated in FAST.Farm through a ZeroMQ interface. Model–plant mismatch is handled through two alternative, separately evaluated approaches: (i) calibration of the FLORIS wake and turbulence response against FAST.Farm (including a rank-dependent attenuation to match downstream wake-added turbulence trends), and (ii) a turbine-wise Gaussian Process Regression (GPR) residual model enabled in selected closed-loop (CL) cases. A four-turbine weakly staggered farm is assessed under turbulent inflow and operational events (turbine shutdowns and time-varying wind direction), and closed-loop performance is benchmarked against lookup-table policies. Results show consistent power gains over greedy control (approximately 10—12% for wake steering and about 16% for induction in the tested condition), with CL providing systematic advantages under shutdown scenarios, while GPR yields mixed benefits under turbulent CL operation.}
+}
+
+
+@misc{rosco_docs_zeromq,
+  author       = {{NREL ROSCO Developers}},
+  title        = {{ROSCO} Documentation: Example 17c\_zeromq\_fastfarm},
+  year         = {2026},
+  howpublished = {\url{https://rosco.readthedocs.io/en/latest/source/examples.html}},
+  note         = {Accessed: 2026-06-17}
+}
+
+@article{curl_model,
+author = {Branlard, Emmanuel and Martínez-Tossas, Luis A. and Jonkman, Jason},
+title = {A time-varying formulation of the curled wake model within the FAST.Farm framework},
+journal = {Wind Energy},
+volume = {26},
+number = {1},
+pages = {44-63},
+keywords = {curled wake, dynamic wake meandering, FAST.Farm, skewed flow, yaw},
+doi = {https://doi.org/10.1002/we.2785},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/we.2785},
+abstract = {Abstract In this article, we present a time-varying formulation of the curled wake model that we implemented in FAST.Farm. The curled wake model, originally developed for steady-state conditions, is used to produce realistic wake profiles behind a wind turbine in yawed (or skewed) conditions. We begin by introducing the key elements of the FAST.Farm framework. Then, after briefly summarizing the original wake dynamics formulation of FAST.Farm based on a polar wake profile, we present the new time-varying formulation of the curled wake model, compare the two, and highlight the differences with the original curled wake model. After discussing some implementation details, we present different applications with increasing levels of complexity: single turbine with uniform and turbulent inflow, fixed and transient yaw, and multiple turbines. We verify our results using the original FAST.Farm implementation and large-eddy simulations. The results with the new curled wake model are improved compared to the original implementation, as they include cross-flow velocities and wake asymmetry. Yet, large-eddy simulation results show a more pronounced lateral convection of the wake and a stronger concentration of vorticity at the top vortex. The new curled wake implementation in FAST.Farm should enable the calculation of not only generator power but also wind turbine structural loads for applications involving intentional or unintentional skewed flow and wind-farm control involving wake steering.},
+year = {2023}
+}
+
+
+@Article{Active_float,
+AUTHOR = {Mahfouz, M. Y. and Molins, C. and Trubat, P. and Hern\'andez, S. and Vigara, F. and Pegalajar-Jurado, A. and Bredmose, H. and Salari, M.},
+TITLE = {Response of the International Energy Agency (IEA) Wind 15\,MW WindCrete and Activefloat floating wind turbines to wind and second-order waves},
+JOURNAL = {Wind Energy Science},
+VOLUME = {6},
+YEAR = {2021},
+NUMBER = {3},
+PAGES = {867--883},
+URL = {https://wes.copernicus.org/articles/6/867/2021/},
+DOI = {10.5194/wes-6-867-2021}
+}
+
+
+@article{JONSWAP_spectra,
+title = {A spectral description for extreme sea states offshore Denmark Part I: Power spectrum},
+journal = {Ocean Engineering},
+volume = {246},
+pages = {110351},
+year = {2022},
+issn = {0029-8018},
+doi = {https://doi.org/10.1016/j.oceaneng.2021.110351},
+author = {Ewans, Kevin and Hansen, Hans Fabricius and Zeeberg, Allan Rod},
+keywords = {Offshore design, Extreme sea state, Wave spectrum},
+abstract = {A power spectral density function that describes extreme sea states in the Danish sector of the North Sea is developed. The power spectrum is specified in terms of the parameters: significant wave height, spectral peak period, and spectral second-moment period. The power spectral density function is a modified Torsethaugen spectrum, involving an expression for the peak enhancement factor that is dependent on the inverse of the square root of wave steepness and a high-frequency tail that decays at a rate which is dependent on the significant wave height and the ratio of the peak and second-moment periods. The new function was developed from Directional Waverider data measured at two sites in the Danish sector of the North Sea and validated with data from other sites offshore Denmark, primarily recorded with Saab WaveRadars. A companion paper describes a new directional spreading function, which together with the power spectral density function, provides a description of the complete frequency-direction spectrum of extreme sea states in the Danish sector of the North Sea.}
+}
+
+
+
+@Article{rosco,
+AUTHOR = {{Abbas N. J., Zalkind D. S., Pao L. and Wright A.}},
+TITLE = {A reference open-source controller for fixed and floating offshore wind turbines},
+JOURNAL = {Wind Energy Science},
+VOLUME = {7},
+YEAR = {2022},
+NUMBER = {1},
+PAGES = {53--73},
+DOI = {10.5194/wes-7-53-2022}
+}
+
+@book{jonkman2021fast,
+  title={Fast. farm user's guide and theory manual},
+  author={{Jonkman, Jason Mark and Shaler, Kelsey}},
+  year={2021},
+  publisher={National Renewable Energy Laboratory Golden, CO, USA}
+}
+
+@techreport{jonkman2006turbsim,
+  title={TurbSim user's guide},
+  author={{Jonkman, Bonnie J}},
+  year={2006},
+  institution={National Renewable Energy Lab.(NREL), Golden, CO (United States)}
+}
+
+
+
+
+@techreport{allen2020definition,
+  title={Definition of the UMaine VolturnUS-S reference platform developed for the IEA wind 15-megawatt offshore reference wind turbine},
+  author={{Allen, Christopher and Viscelli, Anthony and Dagher, Habib and Goupee, Andrew and Gaertner, Evan and Abbas, Nikhar and Hall, Matthew and Barter, Garrett}},
+  year={2020},
+  institution={National Renewable Energy Lab.(NREL), Golden, CO (United States); Univ. of~…}
+}
+
+@techreport{gaertner2020iea,
+  title={{IEA wind TCP task 37: definition of the IEA 15-megawatt offshore reference wind turbine},
+  author={Gaertner, Evan and Rinker, Jennifer and Sethuraman, Latha and Zahle, Frederik and Anderson, Benjamin and Barter, Garrett E and Abbas, Nikhar J and Meng, Fanzhong and Bortolotti, Pietro and Skrzypinski, Witold and others}},
+  year={2020},
+  institution={National Renewable Energy Lab.(NREL), Golden, CO (United States)}
+}
+
+@article{carmo2024investigating,
+  title={Investigating the interactions between wakes and floating wind turbines using FAST. Farm},
+  author={{Carmo Lucas,Jonkman Jason, Thedin Regis}},
+  journal={Wind Energy Science},
+  volume={9},
+  number={9},
+  pages={1827--1847},
+  year={2024},
+  publisher={Copernicus Publications G{\"o}ttingen, Germany}
+}
+
+%% ===================== FLOATING FARM ==============================
+
+@misc{Equinor2023a,
+  author       = {Equinor},
+  title        = {Hywind Scotland},
+  howpublished = {\url{https://www.equinor.com/energy/hywind-scotland}},
+}
+
+
+@misc{PrinciplePower2024,
+  author       = {{Principle Power}},
+  title        = {{The WindFloat{\textregistered}}},
+  howpublished = {\url{https://www.principlepower.com/windfloat}},
+  year         = {2024}
+}
+
+
+@misc{Durakovic2021,
+  author       = {Durakovic, A.},
+  title        = {{Largest Floating Offshore Wind Farm Stands Complete}},
+  howpublished = {\url{https://www.offshorewind.biz/2021/08/24/largest-floating-offshore-wind-farm-stands-complete/}},
+  year         = {2021}
+}
+
+@misc{BWIdeol2024,
+  author       = {{BW Ideol}},
+  title        = {{Floatgen Demonstrator}},
+  howpublished = {\url{https://www.bw-ideol.com/en/floatgen-demonstrator}},
+  note         = {last access: 16 June 2026},
+  year         = {2024}
+}
+
+
+@misc{TotalControl,
+  title        = {{TotalControl}},
+  howpublished = {\url{https://www.bw-ideol.com/en/floatgen-demonstrator}},
+  year         = {2024}
+}
+
+
+
+@Article{wes-9-1827-2024,
+AUTHOR = {Carmo, L. and Jonkman, J. and Thedin, R.},
+TITLE = {Investigating the interactions between wakes and floating wind turbines using FAST.Farm},
+JOURNAL = {Wind Energy Science},
+VOLUME = {9},
+YEAR = {2024},
+NUMBER = {9},
+PAGES = {1827--1847},
+DOI = {10.5194/wes-9-1827-2024}
+}
+
+@article{https://doi.org/10.1002/we.70111,
+author = {Mohammadi, Mohammadreza and Bossanyi, Ervin and Harrison, Matthew and Ogbeifun, Michael and McCarthy, Caitlin and Chapman, John and Bastankhah, Majid and Landberg, Lars},
+title = {Feasibility Study of implementing Wake Steering in Floating Wind Farms: Power Gain, Load Estimation and Economic Analysis},
+journal = {Wind Energy},
+volume = {29},
+number = {5},
+pages = {e70111},
+keywords = {economic analysis, floating turbine, load analysis, tension-leg platform (TLP), wake steering, wind turbine},
+doi = {https://doi.org/10.1002/we.70111},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/we.70111},
+abstract = {ABSTRACT This paper presents an overview of the CONFLOWS project, a collaborative effort between DNV, Marine Power Systems (MPS) and Durham University. The project investigates the effects of wake steering from aerodynamic, structural and economic modelling perspectives, aiming to provide a comprehensive understanding of its impact on performance and design considerations for floating wind platforms. The study examines a hypothetical farm at the Vineyard Wind site on the eastern coast of the United States, consisting of 46 IEA 15-MW turbines. Wind farm simulation results demonstrated that wake steering increases the energy gain in wind farms. Interestingly, dynamic simulations showed that wake steering strategies can yield meaningful improvements in annual energy production, validating their practical relevance beyond idealised steady-state scenarios. Furthermore, structural load modelling with OrcaFlex confirmed that platform motions, even under extreme conditions, did not result in adverse effects on the PelaFlex tension-leg platform (TLP) design which suggests that the mechanical integrity and stability of the floating platform are not compromised by the introduction of yaw-based control strategies. Finally, economic analysis revealed a reduction in the levelised cost of energy (LCOE) when applying wake steering strategies. These findings underscore the value of holistic modelling approaches in the design and optimisation of future floating offshore wind farms.},
+year = {2026}
+}
+
+@article{Starink_2025,
+doi = {10.1088/1742-6596/3131/1/012039},
+year = {2025},
+month = {oct},
+publisher = {IOP Publishing},
+volume = {3131},
+number = {1},
+pages = {012039},
+author = {Starink, Leendert and Xie, Zhaochen and Becker, Marcus and Van Den Berg, Daniel and Van Wingerden, Jan-Willem},
+title = {Optimal (Dynamic) Turbine Repositioning Strategies for a Floating Wind Farm Depending on Mooring Line Stiffness},
+journal = {Journal of Physics: Conference Series},
+abstract = {In the pursuit of mitigating the wake effect, floating wind turbines have additional degrees of freedom compared to their fixed-bottom counterparts. The mooring system with which floating wind turbines are anchored to the seabed allows a range of motion in which turbines can be repositioned. Turbine repositioning uses yaw control to reposition floating wind turbines, and to thereby actively optimize the wind farm layout. Previous research has focused on obtaining optimal steady-state yaw angles for turbine repositioning by using steady-state wake models. Here, the primary conclusion is that mooring line tension needs to be relaxed to facilitate a range of movement large enough for steady-state turbine repositioning to be effective. The presented work studies the effect of using dynamic yaw signals for turbine repositioning by using a dynamic wake model. To study the effect of including wake dynamics, an optimization problem to find the optimal yaw control signals for a two turbine floating wind farm is solved for various mooring configurations. This work shows that for stiffer mooring configurations, turbine repositioning can still be leveraged to increase wind farm efficiency, but that the optimal yaw control action is dynamic for these cases.}
+}
+
+
+@article{FONTANELLA2023119442,
+title = {Modeling the coupled aero-hydro-servo-dynamic response of 15 MW floating wind turbines with wind tunnel hardware in the loop},
+journal = {Renewable Energy},
+volume = {219},
+pages = {119442},
+year = {2023},
+issn = {0960-1481},
+doi = {https://doi.org/10.1016/j.renene.2023.119442},
+url = {https://www.sciencedirect.com/science/article/pii/S0960148123013575},
+author = {Alessandro Fontanella and Alan Facchinetti and Elio Daka and Marco Belloli},
+keywords = {Hardware in the loop, Wind tunnel, Floating wind turbine, Wind turbine control},
+abstract = {Accurate modeling and design tools are required to lower the cost of floating wind and enable the rapid growth that is expected in the next years. This paper presents a hardware-in-the-loop (HIL) wind tunnel experiment, showing it is a valuable tool to investigate the coupled response of two 15 MW floating wind turbines. In the HIL experiment, the wind turbine is emulated with a physical scale model, that is a 1:100 version of the IEA 15 MW, with reference closed-loop control functionalities. Rotor aerodynamic loads are continuously measured and fed back to a numerical simulation of the floater response. The output of the simulation are platform motions that are recreated in the wind tunnel with a robot. The two floating wind turbines are tested with various wind, waves, and turbine control conditions. It is shown the turbine scaled model matches with good accuracy the response of the IEA 15 MW, thanks to the aerodynamic re-design of blades and the adopted closed-loop control strategy. The HIL control system reproduces the coupling between turbine and platform with very small errors. In operational conditions, aerodynamic damping of platform motion is sensitive to wind speed when the turbine is controlled in closed loop, and it is shown that this is due to the coupling between platform pitch and rotor. The amount of aerodynamic damping just below the rated wind speed is found to be more uncertain than in other wind conditions.}
+}
+
+
+
+@Article{jmse11010139,
+AUTHOR = {Srinivas, Arjun and Robertson, Bryson and Gadasi, Jonah Benjamin and Simpson, Barbara Gwynne and Lomónaco, Pedro and Ilzarbe, Jesús María Blanco},
+TITLE = {Impact of Limited Degree of Freedom Drag Coefficients on a Floating Offshore Wind Turbine Simulation},
+JOURNAL = {Journal of Marine Science and Engineering},
+VOLUME = {11},
+YEAR = {2023},
+NUMBER = {1},
+ARTICLE-NUMBER = {139},
+URL = {https://www.mdpi.com/2077-1312/11/1/139},
+ISSN = {2077-1312},
+ABSTRACT = {The worldwide effort to design and commission floating offshore wind turbines (FOWT) is motivating the need for reliable numerical models that adequately represent their physical behavior under realistic sea states. However, properly representing the hydrodynamic quadratic damping for FOWT remains uncertain, because of its dependency on the choice of drag coefficients (dimensionless or not). It is hypothesized that the limited degree of freedom (DoF) drag coefficient formulation that uses only translational drag coefficients causes mischaracterization of the rotational DoF drag, leading to underestimation of FOWT global loads, such as tower base fore-aft shear. To address these hydrodynamic modeling uncertainties, different quadratic drag models implemented in the open-source mid-fidelity simulation tool, OpenFAST, were investigated and compared with the experimental data from the Offshore Code Comparison Collaboration, Continued, with Correlation (OC5) project. The tower base fore-aft shear and up-wave mooring line tension were compared under an irregular wave loading condition to demonstrate the effects of the different damping models. Two types of hydrodynamic quadratic drag formulations were considered: (1) member-based dimensionless drag coefficients applied only at the translational DoF (namely limited-DoF drag model) and (2) quadratic drag matrix model (in dimensional form). Based on the results, the former consistently underestimated the 95th percentile peak loads and spectral responses when compared to the OC5 experimental data. In contrast, the drag matrix models reduced errors in estimates of the tower base shear peak load by 7–10% compared to the limited-DoF drag model. The underestimation in the tower base fore-aft shear was thus inferred be related to mischaracterization of the rotational pitch drag and the heave motion/drag by the limited-DoF model.},
+DOI = {10.3390/jmse11010139}
+}
+
+
+
+
+
+@Article{wes-10-1369-2025,
+AUTHOR = {Fontanella, A. and Fusetti, A. and Cioni, S. and Papi, F. and Muggiasca, S. and Persico, G. and Dossena, V. and Bianchini, A. and Belloli, M.},
+TITLE = {Wake development in floating wind turbines: new insights and an open dataset from wind tunnel experiments},
+JOURNAL = {Wind Energy Science},
+VOLUME = {10},
+YEAR = {2025},
+NUMBER = {7},
+PAGES = {1369--1387},
+DOI = {10.5194/wes-10-1369-2025}
+}
+%% ============================ NEURAL NETWORK FOR WAKE RECONSTRUCTION ================================
+
+
+@article{Mahfouz_2023,
+doi = {10.1088/1742-6596/2626/1/012053},
+year = {2023},
+month = {oct},
+publisher = {IOP Publishing},
+volume = {2626},
+number = {1},
+pages = {012053},
+author = {Mahfouz, Mohammad Youssef and Cheng, Po Wen},
+title = {A passively self-adjusting floating wind farm layout to increase the energy production: a sensitivity analysis},
+journal = {Journal of Physics: Conference Series},
+abstract = {Offshore wind farm layout design techniques and methodologies currently focus on fixed bottom offshore wind turbines. As more floating wind farm (FWFs) are planned, new methodologies for FWF layout design and optimization are required to consider the different attributes between fixed bottom and floating offshore wind turbines (FOWTs). One main difference is the ability of FOWTs to move in the horizontal plane (surge and sway motions). In our work in [1], we showed that the motions of the FOWTs in the horizontal plane represent an opportunity which can be used to increase the FWF’s annual energy production (AEP). We can passively control the motions of the FOWTs in a FWF according to the incoming wind direction, moving the downwind turbines out of the wake of upwind ones. Since the horizontal motions of a FOWT are governed by the mooring system design (MSD) attached to it, this passive control can be done by designing a customized mooring system (MS) for every FOWT in the farm. In this work we build on our work in [1], as we carry out a sensitivity analysis to check the effect of the farm size and the wind rose on the methodology we introduced. The results show that the percentage increase of energy production due to passively relocating the FOWT is sensitive to the FWF size. Very small FWFs will gain less energy by relocating the FOWTs. Moreover, we show that even with a more uni-directional wind rose relocating the FOWTs in a FWF remains beneficial.}
+}
+
+
+%% ============================ NEURAL NETWORK FOR WAKE RECONSTRUCTION ================================
+
+@article{Pish_2024,
+doi = {10.1088/1742-6596/2767/9/092058},
+year = {2024},
+month = {jun},
+publisher = {IOP Publishing},
+volume = {2767},
+number = {9},
+pages = {092058},
+author = {{Pish F., Göçmen T., and Van Der Laan M. P.}},
+title = {Generalization of single wake surrogates for multiple and farm-farm wake analysis},
+journal = {Journal of Physics: Conference Series},
+abstract = {Wind farm efficiency is influenced by atmospheric turbulence and wake interactions from preceding turbines. Optimal performance necessitates effective control strategies, encompassing collective/individual pitch (and/or torque) control, yaw control, and innovative techniques, significantly boosting energy capture. Wake effects are crucial, impacting downstream turbines and reducing overall energy extraction. For this purpose, the study of wind farm flow control (WFFC) holds significant relevance in this context. In this study, a Deep Neural Network predicts downstream flow features of a wind turbine under diverse control scenarios, including varying thrust coefficient and yaw control. A feed-forward neural network models the deficit and added turbulent intensity of a single wake, trained using Computational Fluid Dynamics (CFD) simulations as reference data. Linear superposition establishes the wind farm flow field, allowing examination of downstream effects. Another feedforward neural network encompasses wind farm physics such as blockage and wake recovery in and around wind turbine arrays which are overlooked by the single wake model. The methodology employed in this study yields results that are more time-efficient compared to traditional CFD models while maintaining a higher level of accuracy (ideally) than the engineering models, especially when implemented for WFFC without calibration.}
+}
+
+
+
+
+%% ================================== LOAD SUROGATE MODELS and digital twins=====================================
+
+@article{Guillore_2024,
+doi = {10.1088/1742-6596/2767/3/032019},
+year = {2024},
+month = {jun},
+publisher = {IOP Publishing},
+volume = {2767},
+number = {3},
+pages = {032019},
+author = {{Guilloré A, Campagnolo F. and Bottasso C. L.}},
+title = {A control-oriented load surrogate model based on sector-averaged inflow quantities: capturing damage for unwaked, waked, wake-steering and curtailed wind turbines},
+journal = {Journal of Physics: Conference Series},
+abstract = {This paper presents a novel approach to constructing a load surrogate model. The surrogate estimates the damage equivalent loads (DELs) of a wind turbine of a given type regardless of its position within a wind farm, and under various farm control actions. The model relies solely on local inflow quantities (sector-averaged wind speeds and turbulence intensities) and local control parameters (rotor speed, pitch angle, and yaw misalignment). Despite its highly simplified representation of the complex behavior of the turbulent wind field, wake effects, and controller dynamics, these quantities prove sufficient to characterize DELs. The paper demonstrates the training of this load model within a simulation environment. Validation results using a different wind farm configuration indicate that the surrogate can accurately predict fatigue loads for both unwaked and waked turbines, encompassing scenarios of wake steering and induction control.}
+}
+
+
+@Article{wes-9-2039-2024,
+AUTHOR = {Haghi, R. and Crawford, C.},
+TITLE = {Data-driven surrogate model for wind turbine damage equivalent load},
+JOURNAL = {Wind Energy Science},
+VOLUME = {9},
+YEAR = {2024},
+NUMBER = {11},
+PAGES = {2039--2062},
+DOI = {10.5194/wes-9-2039-2024}
+}
+
+
+@Article{floating_load_surrogate_model,
+AUTHOR = {{Singh D., Haugen E., and Laugesen K., and Dwight R. P., Vir\'e, A.}},
+TITLE = {Data-driven probabilistic surrogate model for floating wind turbine lifetime damage equivalent load prediction},
+JOURNAL = {Wind Energy Science},
+VOLUME = {10},
+YEAR = {2025},
+NUMBER = {12},
+PAGES = {2865--2888},
+DOI = {10.5194/wes-10-2865-2025}
+}
+
+@article{transfer_learning_DEL,
+title = {Hybrid surrogate input load estimation model in offshore wind turbines using transfer learning and multitask learning},
+journal = {Renewable Energy},
+volume = {247},
+pages = {123011},
+year = {2025},
+issn = {0960-1481},
+doi = {https://doi.org/10.1016/j.renene.2025.123011},
+author = {{Azin Mehrjoo, Eleonora M. Tronci, Babak Moaveni, Eric Hines}},
+keywords = {Offshore wind turbines, Input load estimation, Transfer learning, Multi-task learning},
+abstract = {Accurate input load estimation is useful for proactive maintenance, design optimization, and digital twining of offshore wind turbines. Traditional physics-based approaches for input load estimation, while accurate, face challenges due to high computational demands, limited availability of experimental data, and challenges with direct measurement of input loads. This paper introduces a novel hybrid surrogate model for real-time input load estimation that integrates data-driven and physics-based methodologies to address these limitations. The proposed framework focuses on training a neural network-based regression model that can predict the input load time history using the dynamic structural response (accelerometers and strain measurements) as input. The model is optimally designed to overcome the lack of experimental data by following a transfer learning strategy: the model is initially trained on synthetic data generated from a physics-based model and then fine-tuned using experimental data. Additionally, a multitasking approach is implemented to extend the applicability of the model to different regions of operation. Finally, a dropout Montecarlo strategy is proposed to quantify the uncertainty of the regression model. This hybrid surrogate model demonstrates superior computational efficiency and accuracy in input load estimation compared to conventional physics-based models, and it offers several practical benefits. It is scalable, does not necessitate continual recalibration, and exhibits robustness across diverse datasets and operational conditions. The model's potential for real-time applications, such as digital twin technology, underscores its contribution to advancing maintenance strategies and design improvements in offshore wind turbine engineering.}
+}
+
+
+
+@Article{en17020346,
+AUTHOR = {Haghi, Rad and Stagg, Cassidy and Crawford, Curran},
+TITLE = {Wind Turbine Damage Equivalent Load Assessment Using Gaussian Process Regression Combining Measurement and Synthetic Data},
+JOURNAL = {Energies},
+VOLUME = {17},
+YEAR = {2024},
+NUMBER = {2},
+ARTICLE-NUMBER = {346},
+ISSN = {1996-1073},
+ABSTRACT = {Assessing the structural health of operational wind turbines is crucial, given their exposure to harsh environments and the resultant impact on longevity and performance. However, this is hindered by the lack of data in commercial machines and accurate models based on manufacturers’ proprietary design data. To overcome these challenges, this study focuses on using Gaussian Process Regression (GPR) to evaluate the loads in wind turbines using a hybrid approach. The methodology involves constructing a hybrid database of aero-servo-elastic simulations, integrating publicly available wind turbine models, tools and Supervisory Control and Data Acquisition (SCADA) measurement data. Then, constructing GPR models with hybrid data, the prediction is validated against the hybrid and SCADA measurements. The results, derived from a year of SCADA data, demonstrate the GPR model’s effectiveness in interpreting and predicting turbine performance metrics. The findings of this study underscore the potential of GPR for the health and reliability assessment and management of wind turbine systems.},
+DOI = {10.3390/en17020346}
+}
+
+
+
+
+
+@Article{jmse12081275,
+AUTHOR = {Yuan, Xinyu and Huang, Qian and Song, Dongran and Xia, E. and Xiao, Zhao and Yang, Jian and Dong, Mi and Wei, Renyong and Evgeny, Solomin and Joo, Young-Hoon},
+TITLE = {Fatigue Load Modeling of Floating Wind Turbines Based on Vine Copula Theory and Machine Learning},
+JOURNAL = {Journal of Marine Science and Engineering},
+VOLUME = {12},
+YEAR = {2024},
+NUMBER = {8},
+ARTICLE-NUMBER = {1275},
+ISSN = {2077-1312},
+ABSTRACT = {Fatigue load modeling is crucial for optimizing and assessing the lifespan of floating wind turbines. This study addresses the complex characteristics of fatigue loads on floating wind turbines under the combined effects of wind and waves. We propose a fatigue load modeling approach based on Vine copula theory and machine learning. Firstly, we establish an optimal joint probability distribution model using Vine copula theory for the four-dimensional random variables (wind speed, wave height, wave period, and wind direction), with model fit assessed using the Akaike Information Criterion (AIC), Bayesian Information Criterion (BIC), and Root Mean Square Error (RMSE). Secondly, representative wind and wave load conditions are determined using Monte Carlo sampling based on the established joint probability distribution model. Thirdly, fatigue load simulations are performed using the high-fidelity simulator OpenFAST to compute Damage Equivalent Load (DEL) values for critical components (blade root and tower base). Finally, utilizing measured wind and wave data from the Lianyungang Ocean Observatory in the East China Sea, simulation tests are conducted. We apply five commonly used machine learning models (Kriging, MLP, SVR, BNN, and RF) to develop DEL models for blade root and tower base. The results indicate that the RF model exhibits the smallest prediction error, not exceeding 3.9%, and demonstrates high accuracy, particularly in predicting flapwise fatigue loads at the blade root, achieving prediction accuracies of up to 99.97%. These findings underscore the effectiveness of our approach in accurately predicting fatigue loads under real-world conditions, which is essential for enhancing the reliability and efficiency of floating wind turbines.},
+DOI = {10.3390/jmse12081275}
+}
+
+
+
+@Article{Branlard2024,
+AUTHOR = {{Branlard E., Jonkman J., Brown C. and Zhang J.}},
+TITLE = {A digital twin solution for floating offshore wind turbines validated using a full-scale prototype},
+JOURNAL = {Wind Energy Science},
+VOLUME = {9},
+YEAR = {2024},
+NUMBER = {1},
+PAGES = {1--24},
+DOI = {10.5194/wes-9-1-2024}
+}
+
+
+
+%% ================================ FLORIS WAKE MODEL ================================
+
+@software{floris_git,
+  author = {{National Renewable Energy Laboratory (NREL)}},
+  title = {FLORIS: FLOw Redirection and Induction in Steady State},
+  year = {2023},
+  url = {https://github.com/NREL/floris}
+}
+
+@software{floris_documentation,
+  author = {{National Renewable Energy Laboratory (NREL)}},
+  title = {FLORIS: FLOw Redirection and Induction in Steady State},
+  year = {2023},
+  url = {https://natlabrockies.github.io/floris/}
+}
+
+
+@article{Bastankhah_Port-Agel_2016,
+title={Experimental and theoretical study of wind turbine wakes in yawed conditions}, volume={806}, DOI={10.1017/jfm.2016.595}, journal={Journal of Fluid Mechanics}, author={{Bastankhah Majid, Porté-Agel Fernando}}, year={2016}, pages={506–541}} <div></div>
+
+@article{Niayifar2016AnalyticalMO,
+  title={Analytical Modeling of Wind Farms: A New Approach for Power Prediction},
+  author={{Amin Niayifar and Fernando Port{\'e}-Agel}},
+  journal={Energies},
+  year={2016},
+  volume={9},
+  pages={741},
+}
+
+@Article{wes-6-701-2021,
+AUTHOR = {{King J., Fleming P., King R., Mart\'{\i}nez-Tossas L. A., Bay C. J.,  Mudafort R., Simley, E.}},
+TITLE = {Control-oriented model for secondary effects of wake steering},
+JOURNAL = {Wind Energy Science},
+VOLUME = {6},
+YEAR = {2021},
+NUMBER = {3},
+PAGES = {701--714},
+DOI = {10.5194/wes-6-701-2021}
+}
+
+
+%% ============================ Control strategies ===============================
+@Article{wes-2025-265,
+AUTHOR = {{Baricchio M., Van Der Hoek D., Dammann T., Gebraad P. M. O., Iori J., Van Wingerden, J.-W.}},
+TITLE = {Combining wake steering and active wake mixing on a large-scale wind farm},
+JOURNAL = {Wind Energy Science Discussions},
+VOLUME = {2025},
+YEAR = {2025},
+PAGES = {1--36},
+DOI = {10.5194/wes-2025-265}
+}
+
+@article{DAMMANN2026127808,
+title = {A novel engineering wake model for helix-actuated wind turbine wakes},
+journal = {Applied Energy},
+volume = {414},
+pages = {127808},
+year = {2026},
+issn = {0306-2619},
+doi = {https://doi.org/10.1016/j.apenergy.2026.127808},
+author = {Tim Dammann and Daan {van der Hoek} and Wei Yu and Jan-Willem {van Wingerden}},
+keywords = {Wind turbine wakes, Active wake control, Wake modelling, Wind farm control, Wind farm power prediction, Helix},
+abstract = {Engineering wake models are essential tools in wind farm design and operation. Their computational efficiency enables rapid layout optimization, energy calculation, and turbine control setpoint design. As wind farms grow in scale and density, wake interactions between turbines limit overall energy capture and increase structural loading. Wind Farm Control strategies have become critical for mitigating these effects. While wake steering, the intentional yaw misalignment of upstream turbines, has consistently demonstrated power gains, new dynamic control strategies are emerging. Among these, the Helix approach has shown particular promise in accelerating wake recovery and improving downstream power production. While engineering models for wake steering are well established, dedicated models for the Helix approach remain unavailable. This study presents a novel steady-state engineering model for predicting the velocity deficit and added turbulence of wind turbines operating under Helix actuation. The proposed model extends double-Gaussian velocity deficit and bell-curve– shaped turbulence intensity formulations to account for Helix-specific effects of actuation amplitude and ambient turbulence. Calibration and validation against high-fidelity large-eddy simulations demonstrate strong agreement across a wide range of operating conditions. The model accurately reproduces wake recovery trends, variations in the velocity-deficit profile, turbulence distributions, and the resulting downstream power availability. Finally, a case study on a large offshore wind farm illustrates that, under typical offshore atmospheric conditions, Helix control and wake steering yield individual power gains of up to 2.5% and 6.1%, respectively, while their combined application achieves total power gains of up to 7.1%.}
+}
+
+@inproceedings{serial_refine,
+  title={Serial-refine method for fast wake-steering yaw optimization},
+  author={{Fleming Paul, Stanley Andrew, Bay Christopher, King Jennifer, Simley Eric, Doekemeijer Bart, Mudafort Rafael}},
+  booktitle={Journal of Physics: Conference Series},
+  volume={2265},
+  number={3},
+  pages={032109},
+  year={2022},
+  organization={IOP Publishing}
+}
+
+
+
+@misc{Helix_control,
+      title={The helix approach: using dynamic individual pitch control to enhance wake mixing in wind farms}, 
+      author={Frederik, Joeri Alexis and Doekemeijer, Bart Matthijs and Mulders, Sebastiaan Paul and van Wingerden, Jan-Willem},
+      year={2020},
+      eprint={1912.10025},
+      archivePrefix={arXiv},
+      primaryClass={eess.SY},
+}
+
+@Article{Pulse_control,
+AUTHOR = {Munters, W. and Meyers, J.},
+TITLE = {Towards practical dynamic induction control of wind farms: analysis of optimally controlled wind-farm boundary layers
+and sinusoidal induction control of first-row turbines},
+JOURNAL = {Wind Energy Science},
+VOLUME = {3},
+YEAR = {2018},
+NUMBER = {1},
+PAGES = {409--425},
+DOI = {10.5194/wes-3-409-2018}
+}
+
+@INPROCEEDINGS{wake_steering_control,
+  author={Campagnolo, Filippo and Petrović, Vlaho and Bottasso, Carlo L. and Croce, Alessandro},
+  booktitle={2016 American Control Conference (ACC)}, 
+  title={Wind tunnel testing of wake control strategies}, 
+  year={2016},
+  volume={},
+  number={},
+  pages={513-518},
+  keywords={Wind farms;Wind turbines;Rotors;Blades;Testing;Shafts;Extraterrestrial measurements},
+  doi={10.1109/ACC.2016.7524965}}
+
+@article{FLEMING2014211,
+title = {Evaluating techniques for redirecting turbine wakes using SOWFA},
+journal = {Renewable Energy},
+volume = {70},
+pages = {211-218},
+year = {2014},
+note = {Special issue on aerodynamics of offshore wind energy systems and wakes},
+issn = {0960-1481},
+doi = {https://doi.org/10.1016/j.renene.2014.02.015},
+author = {Fleming, Paul and Gebraad, Pieter and Lee, Sang and van Wingerden, Jan-Willem and Johnson, Kathryn and Churchfield, Matt and Michalakes, John and Spalart, Philippe and Moriarty, Patrick},
+keywords = {Wind farm control, Wind turbine wakes, Wind plant control, CFD, Wake redirection, Independent pitch control},
+abstract = {Wind plant control is an active field of research in which controllers are developed that seek to maximize overall wind-plant performance in terms of power production, turbine structural loads, or both. Such control strategies are often different from those that are optimal for an individual turbine. One type of wind-plant control method is to redirect the wakes of upstream turbines so that they avoid downstream turbines. In this paper, we investigate several possible methods for redirecting turbine wakes, including some existing and some novel approaches. The methods are compared in terms of their ability to redirect turbine wakes and their effects on turbine power capture and structural loads using the high-fidelity wind plant simulation tool Simulator for On/Offshore Wind Farm Applications (SOWFA).}
+}
+
+@article{induction_control,
+author = {Annoni, Jennifer and Gebraad, Pieter M. O. and Scholbrock, Andrew K. and Fleming, Paul A. and van Wingerden, Jan-Willem},
+title = {Analysis of axial-induction-based wind plant control using an engineering and a high-order wind plant model},
+journal = {Wind Energy},
+volume = {19},
+number = {6},
+pages = {1135-1150},
+keywords = {wind plant control, wind turbine control, wind turbine wakes},
+doi = {https://doi.org/10.1002/we.1891},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/we.1891},
+abstract = {Abstract Wind turbines are typically operated to maximize their performance without considering the impact of wake effects on nearby turbines. Wind plant control concepts aim to increase overall wind plant performance by coordinating the operation of the turbines. This paper focuses on axial-induction-based wind plant control techniques, in which the generator torque or blade pitch degrees of freedom of the wind turbines are adjusted. The paper addresses discrepancies between a high-order wind plant model and an engineering wind plant model. Changes in the engineering model are proposed to better capture the effects of axial-induction-based control shown in the high-order model. Copyright © 2015 John Wiley \& Sons, Ltd.},
+year = {2016}
+}
+
+@article{Bartl_2016,
+doi = {10.1088/1742-6596/753/3/032035},
+year = {2016},
+month = {sep},
+publisher = {IOP Publishing},
+volume = {753},
+number = {3},
+pages = {032035},
+author = {Bartl, J. and Sætran, L.},
+title = {Experimental testing of axial induction based control strategies for wake control and wind farm optimization},
+journal = {Journal of Physics: Conference Series},
+abstract = {In state-of-the-art wind farms each turbine is controlled individually aiming for optimum turbine power not considering wake effects on downstream turbines. Wind farm control concepts aim for optimizing the overall power output of the farm taking wake interactions between the individual turbines into account. This experimental wind tunnel study investigates axial induction based control concepts. It is examined how the total array efficiency of two in-line model turbines is affected when the upstream turbine's tip speed ratio (λcontrol) or blade pitch angle (β-control) is modified. The focus is particularly directed on how the wake flow behind the upstream rotor is affected when its axial induction is reduced in order to leave more kinetic energy in the wake to be recovered by a downstream turbine. It is shown that the radial distribution of kinetic energy in the wake area can be controlled by modifying the upstream turbine's tip speed ratio. By pitching out the upstream turbine's blades, however, the available kinetic energy in the wake is increased at an equal rate over the entire blade span. Furthermore, the total array efficiency of the two turbine setup is mapped depending on the upstream turbines tip speed ratio and pitch angle. For a small turbine separation distance of x/D=3 the downstream turbine is able to recover the major part of the power lost on the upstream turbine. However, no significant increase in the two-turbine array efficiency is achieved by altering the upstream turbine's operation point away from its optimum.}
+}
+
+@article{closed_loop,
+  title={Closed-loop model-based wind farm control using FLORIS under time-varying inflow conditions},
+  author={{Doekemeijer, Bart M and van der Hoek, Daan and van Wingerden, Jan-Willem}},
+  journal={Renewable Energy},
+  volume={156},
+  pages={719--730},
+  year={2020},
+  publisher={Elsevier}
+}
+
+
+%% ================================== LOW fidelity models ==================================
+
+@article{
+    pywake2.5.0_2023,
+    title={PyWake 2.5.0: An open-source wind farm simulation tool},
+    author={{Mads M. Pedersen, Alexander Meyer Forsting, Paul van der Laan, Riccardo Riva, Leonardo A. Alcayaga Romàn, Javier Criado Risco, Mikkel Friis-Møller, Julian Quick, Jens Peter Schøler Christiansen, Rafael Valotta Rodrigues, Bjarke Tobias Olsen and Pierre-Elouan Réthoré}},
+    publisher={DTU Wind, Technical University of Denmark},
+    year={2023},
+    month={2}
+    }
+
+@article{floris_model,
+  author = {{NREL}},
+  title = {FLORIS: A control-oriented model for wind farm power optimization},
+  journal = {Wind Energy Science},
+  year = {2020},
+  note = {Model description and validation}
+}
+
+
+@article{https://doi.org/10.1002/we.70044,
+author = {Becker, Marcus and van den Broek, Maarten J. and Allaerts, Dries and van Wingerden, Jan-Willem},
+title = {Closed-Loop Model-Predictive Wind Farm Flow Control Under Time-Varying Inflow Using FLORIDyn},
+journal = {Wind Energy},
+volume = {28},
+number = {9},
+pages = {e70044},
+keywords = {closed-loop control, dynamic wake model, wake steering, wind farm flow control},
+doi = {https://doi.org/10.1002/we.70044},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/we.70044},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/we.70044},
+abstract = {ABSTRACT Wind farm flow control has been a key research focus in recent years, driven by the idea that a collectively operating wind farm can outperform individually controlled turbines. Control strategies are predominantly applied in an open-loop manner, where the current flow conditions are used to look up precomputed steady-state set points. Closed-loop control approaches, on the other hand, take measurements from the farm into account and optimize their set points online, which makes them more flexible and resilient. This paper introduces a closed-loop model-predictive wind farm controller using the dynamic engineering model FLORIDyn to maximize the energy generated by a ten-turbine wind farm. The framework consists of an Ensemble Kalman Filter to continuously correct the flow field estimate, as well as a novel optimization strategy. To this end, the paper discusses two dynamic ways to maximize the farm energy and compares this to the current look-up table industry standard. The framework relies solely on turbine measurements without using a flow field preview. In a 3-h case study with time-varying conditions, the derived controllers achieve an overall energy gain of 3\% to 4.4\% with noise-free wind direction measurements. If disturbed and biased measurements are used, this performance decreases to 1.9\% to 3\% over the greedy control baseline with the same measurements. The comparison to look-up table controllers shows that the closed-loop framework performance is more robust to disturbed measurements but can only match the performance in noise-free conditions.},
+year = {2025}
+}
+
+
+
+@article{Becker_2026,
+doi = {10.1088/1742-6596/3224/3/032124},
+url = {https://doi.org/10.1088/1742-6596/3224/3/032124},
+year = {2026},
+month = {may},
+publisher = {IOP Publishing},
+volume = {3224},
+number = {3},
+pages = {032124},
+author = {Becker, Marcus and Wingerden, Jan-Willem van},
+title = {Risk-averse wake steering optimization for energy and power maximization under uncertain wind direction changes},
+journal = {Journal of Physics: Conference Series},
+abstract = {Wind farm flow control strategies aim to manipulate the flow between the turbines to achieve a farm-wide goal. Wake steering is one such strategy, typically employed to increase the yield of a wind farm by redirecting upstream turbines’ wakes away from downstream ones. This control approach is sensitive to the wind direction, and frequently varying wind directions create the need for robust yaw steering control setpoints. In the past, this has been achieved in the steady-state domain, as dynamic simulations are typically deemed too expensive to perform a large grid-search for optimal setpoints. This paper utilizes a computationally cheap dynamic wake model and explores how robust control setpoints can be derived in the time domain. To this end, the paper presents a methodology for generating synthetic wind direction changes with a prescribed variation in wind direction. These wind direction time series are then used to create a database of a two-turbine wind farm, which allows the exploration of different cost functions in time. The database provides both the expected value and the uncertainty of both power and energy. The obtained data is then used to explore four cost functions to derive robust setpoints. Comparing energy and power performance, we define useful quantities of interest to connect the two and to highlight necessary assumptions made when using steady-state setpoints. The paper concludes by applying the resulting look-up table controllers in a ten-turbine wind farm. The performance shows that maximizing for the expected power is the best approach to increase the farm efficiency. The results also show that an alternative cost function, which avoids losses, does lead to similar but smaller gains at a much lower yaw angle investment.}
+}
+
+
+
+@article{https://doi.org/10.1002/we.70044,
+author = {Becker, Marcus and van den Broek, Maarten J. and Allaerts, Dries and van Wingerden, Jan-Willem},
+title = {Closed-Loop Model-Predictive Wind Farm Flow Control Under Time-Varying Inflow Using FLORIDyn},
+journal = {Wind Energy},
+volume = {28},
+number = {9},
+pages = {e70044},
+keywords = {closed-loop control, dynamic wake model, wake steering, wind farm flow control},
+doi = {https://doi.org/10.1002/we.70044},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/we.70044},
+abstract = {ABSTRACT Wind farm flow control has been a key research focus in recent years, driven by the idea that a collectively operating wind farm can outperform individually controlled turbines. Control strategies are predominantly applied in an open-loop manner, where the current flow conditions are used to look up precomputed steady-state set points. Closed-loop control approaches, on the other hand, take measurements from the farm into account and optimize their set points online, which makes them more flexible and resilient. This paper introduces a closed-loop model-predictive wind farm controller using the dynamic engineering model FLORIDyn to maximize the energy generated by a ten-turbine wind farm. The framework consists of an Ensemble Kalman Filter to continuously correct the flow field estimate, as well as a novel optimization strategy. To this end, the paper discusses two dynamic ways to maximize the farm energy and compares this to the current look-up table industry standard. The framework relies solely on turbine measurements without using a flow field preview. In a 3-h case study with time-varying conditions, the derived controllers achieve an overall energy gain of 3\% to 4.4\% with noise-free wind direction measurements. If disturbed and biased measurements are used, this performance decreases to 1.9\% to 3\% over the greedy control baseline with the same measurements. The comparison to look-up table controllers shows that the closed-loop framework performance is more robust to disturbed measurements but can only match the performance in noise-free conditions.},
+year = {2025}
+}
+
+
+
+@article{Becker_2022,
+doi = {10.1088/1742-6596/2265/3/032103},
+year = {2022},
+month = {may},
+publisher = {IOP Publishing},
+volume = {2265},
+number = {3},
+pages = {032103},
+author = {{Becker M., Allaerts D., Van Wingerden, J W}},
+title = {FLORIDyn - A dynamic and flexible framework for real-time wind farm control},
+journal = {Journal of Physics: Conference Series},
+abstract = {This paper presents a new framework of the FLOw Redirection and Induction Dynamics (FLORIDyn) model. It is able to dynamically simulate the wake behaviour in wind farms under heterogeneous and changing environmental conditions at a low computational cost. The novelty of this work is the improved segregation of wake dynamics and wake influence: the framework creates Observation Points (OPs) at each turbine, which propagate wind field states and turbine states downstream and follow the wind direction of the free stream velocity. These observation points cover the dynamic aspects of the simulation. The OPs, along with the stored states, are now used to derive so-called Temporary Wind Farms (TWF), which approximate the effective intra-farm wind conditions at a given location. Within these TWF, the flow conditions are homogeneous and steady state. This way, arbitrary wake models can be used to calculate the farm influence on the location. The FLORIDyn framework also provides interfaces to flow field estimators, which is tested with an effective wind speed estimator. A nine turbine case is used to highlight the quality and performance of the simulation result. Compared to its predecessor, the new FLORIDyn framework decreases the computational cost by one to two orders of magnitude, which makes it a promising candidate for real-time model predictive dynamic wind farm control.}
+}
+
+
+%% =================================  machine learning deep learning books ===================================
+
+@book{rasmussen2006gaussian,
+  title     = {Gaussian Processes for Machine Learning},
+  author    = {{Rasmussen Carl, Edward,  Williams, Christopher K. I.}},
+  year      = {2006},
+  publisher = {MIT Press},
+  address   = {Cambridge, MA},
+}
+
+@book{goodfellow2016deep,
+  title     = {Deep Learning},
+  author    = {{Goodfellow Ian, Bengio Yoshua, Courville Aaron}},
+  year      = {2016},
+  publisher = {MIT Press},
+  address   = {Cambridge, MA},
+  url       = {https://www.deeplearningbook.org/}
+}
+
+================================== DEL turbulence relationship ====================================
+@phdthesis{DEL_turb,
+title = "Turbulence and turbulence-generated structural loading in wind turbine clusters",
+abstract = "Turbulence - in terms of standard deviation of wind speed fluctuations - and other flow characteristics are different in the interior of wind farms relative to the free flow and action must be taken to ensure sufficient structural sustainability of the wind turbines exposed to “wind farm flow”. The standard deviation of wind speed fluctuations is a known key parameter for both extreme- and fatigue loading, and it is argued and found to be justified that a model for change in turbulence intensity alone may account for increased fatigue loading in wind farms. Changes in scale of turbulence and horizontal flow-shear also influence the dynamic response and thus fatigue loading. However, these parameters are typically – negatively or positively – correlated with the standard deviation of wind speed fluctuations, which therefore can, if need be, represent these other variables. Thus, models for spatially averaged turbulence intensity inside the wind farm and direct-wake turbulence intensity are being devised and a method to combine the different load situations is proposed. The combination of the load cases implies a weighting method involving the slope of the considered material{\textquoteright}s W{\"o}hler curve. In the context, this is novel and necessary to avoid excessive safety for fatigue estimation of the structure{\textquoteright}s steel components, and non-conservatism for fibreglass components. The proposed model offers significant reductions in computational efforts in the design process. The status for the implementation of the model is that it became part of the Danish standard for wind turbine design DS 472 (2001) in August 2001 and it is part of the corresponding international standard, IEC61400-1 (2005). Also, extreme loading under normal operation for wake conditions and the efficiency of very large wind farms are discussed.",
+keywords = "Vindenergi, Ris{\o}-R-1188, Ris{\o}-R-1188(EN)",
+author = "Frandsen",
+note = "Ris{\o}-R-1188(EN)",
+year = "2007",
+language = "English",
+isbn = "87-550-3458-6",
+series = "Denmark. Forskningscenter Risoe. Risoe-R",
+number = "1188(EN)",
+}
+
+
+=============================== offshore TI conditions ==================================
+@article{TURK2010466,
+title = {The dependence of offshore turbulence intensity on wind speed},
+journal = {Journal of Wind Engineering and Industrial Aerodynamics},
+volume = {98},
+number = {8},
+pages = {466-471},
+year = {2010},
+issn = {0167-6105},
+doi = {https://doi.org/10.1016/j.jweia.2010.02.005},
+author = {{Matthias Türk and Stefan Emeis}},
+keywords = {Marine boundary layer, Turbulence intensity, Offshore wind turbine standards},
+abstract = {Four years of 10min mean wind data from the offshore measuring platform FINO1 (Forschung in Nord-und Ostsee 1) in the German Bight have been analyzed to obtain the dependence of turbulence intensity on the wind speed. The investigated dataset is unique in so far as no high quality long-term measurements with a height resolution of 10m at heights between 33 and 103m and a minimum distance to the coast of 45km have been available so far. Wave height and therefore sea surface roughness and turbulence intensity increase with increasing wind speed. The influence of the surface roughness decreases with height. Results are compared to previous results and to the specifications given by the IEC wind turbine standards 61400-1 and 61400-3.}
+}
+
+
+@Article{wes-9-2001-2024,
+AUTHOR = {Jeans, G.},
+TITLE = {Converging profile relationships for offshore wind speed and turbulence intensity},
+JOURNAL = {Wind Energy Science},
+VOLUME = {9},
+YEAR = {2024},
+NUMBER = {10},
+PAGES = {2001--2015},
+DOI = {10.5194/wes-9-2001-2024}
+}
+
+
+%% ===================================== ADAM Optimizer ===========================================
+@inproceedings{kingma2015adam,
+  title     = {Adam: A Method for Stochastic Optimization},
+  author    = {{Kingma, Diederik P. and Ba, Jimmy}},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2015},
+}
+
+%% ===================================== MLIFE ===========================================
+@techreport{mlife_theory,
+  author      = {Hayman, G. J.},
+  title       = {{MLife} Theory Manual for Version 1.00},
+  institution = {National Renewable Energy Laboratory (NREL)},
+  address     = {Golden, CO},
+  year        = {2012},
+  month       = oct,
+}
+
+@article{Krathe2025,
+  author  = {{Krathe, Veronica Liverud and Thedin, Regis and 
+             Jonkman, Jason M. and Nejad, Amir R. and 
+             Bachynski-Polić, Erin E.}},
+  title   = {Main bearing response in a waked 15-{MW} floating 
+             wind turbine in below-rated conditions},
+  journal = {Forschung im Ingenieurwesen},
+  year    = {2025},
+  volume  = {89},
+  number  = {1},
+  pages   = {37},
+  doi     = {10.1007/s10010-025-00808-z}
+}
+
+@techreport{hayman2012mlife_user,
+title = {MLife User's Guide for Version 1.00},
+author = {Hayman, Gregory J. and Buhl Jr., Marshall L.},
+institution = {National Renewable Energy Laboratory},
+address = {Golden, CO},
+year = {2012}
+}

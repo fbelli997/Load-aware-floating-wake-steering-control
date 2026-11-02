@@ -1,0 +1,3 @@
+A load rose considers loads at different orientations within a given cross section. 
+For fatigue, a load rose ensures that fatigue cycles are counted uniquely at different orientations within the cross section. 
+This is important because the maximum load may not occur along the primary axes of a cross section.

@@ -1,0 +1,58 @@
+                          MLife Alpha Change Log
+                          --------------------------
+v1.00.01a-gjh 30-Oct-2015                          
+   o added support for user-supplied joint pdf file
+   o altered computation of lifetime scaling factor for normal operating DLC files where V > Vout, those damage counts are no longer added to the lifetime damage calculations  
+v1.00.00f-gjh thru v1.00.00c-gjh Greg Hayman
+   o added support for binary FAST output files
+   o fixed bug when indexing into the damage and time until failure arrays.  
+   o fixed bug that would output statistics files even when DoStats flag was false
+   o fixed bug which caused aggregate or short-term DEL results to be NaN when availability = 1 and files were in the 2nd DLC group.
+   o fixed bug with ChanNames indexing for load roses fixed off by one indexing bug at line 716 now correctly handling case where first DLC group has zero files fixed bug with parsing filename for third DLC group
+   o updated documentation
+   o changed naming of output files
+   o added support to expand ..\..\.. etc. in path
+   o changed aggRoot to RootName, changed DoSimpDELs to DoShortTerm, changed WrDELsTxt, WrDELsXLS to WrShortTermTxt, WrShortTermXLS, added group name support, Changed DLC_Occurances to DLC_Occurrences
+   o Added default Group name if there were no user-supplied groups
+   o Changed variable names:  DELGroups -> Groups,  nDELGroups -> nGroups
+   o fixed bug which caused Rainflow mex to crash because peaks input was not an array of doubles
+   o Fixed bug where zero fixed mean results were not being calculated
+   o Added a c-based rainflow counting algorithm from the mathworks community.  See files for copyright information
+   o Fixed a fprintf typo, changed function calls for short term DEL output
+   o now computing the overall maximum cycle ranges of all input files in order to create the load bins
+   o Added error checking to make sure at least one input file used 
+   o added partial safety factors 
+   o added Load Roses support 
+   o added Design Load Cases 
+   o added DEL_Type parameter which supports calculation of various DELs
+   o added GoodmanFlag parameter to allow the user to use or not use the Goodman correction
+   o fixed bugs when only one input file is used 
+   o added short-term damage-rate calculations 
+   o added aggregate short-term calculations
+   o added functions with unique naming so they don't interfere with MCrunch / MExtremes
+   o separate out wind speed binning of files in power production vs idling
+   o fixed bug which returned the incorrect bin # for V > Vout
+   o Changed how to calculate WM and AM for LMF
+   o Modified accumulation of total elapsed time in a windspeed bin to be on a per DLC-basis
+   o In previous version discrete events elapsed time was added to the Fatigue.Time(WSbin) summations.  Discrete events should not be included!
+   o fixed bug where channel cycles were not counted if there were only 3 peaks.
+   o Fixed bug with applying the filter ratio for the racetrack filter.  Updated version date to Mar 2
+   o fixed bug when combining filelists from DLC groups
+   o fixed bug when allocating strData variable (should not have included nFiles!)
+   o fixed bug which left a file handle open
+   o new wind speed binning,
+   o use of Availability 
+   o fixed bug with file paths when only 1 or 2 input parameters are passed to MLife. 
+
+
+v1.00.00b-gjh  16-Nov-2011  Greg Hayman
+   o First alpha version.  
+
+
+v1.00.00a-gjh  02-Jun-2011  Greg Hayman
+   o First prototype version.
+==========================================================================
+To Do:
+
+o  Add Save and Restore functionality
+
