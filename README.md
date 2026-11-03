@@ -12,7 +12,9 @@ through ZeroMQ.
   DEL surrogate models (FFNN, optional GPR correction).
   - `Simulations/2026_3T_DEL/3T_IEA15_floating_00/`: three-turbine case study (settings,
     `CLC_init_floating_fun_ZMQ_<run>.m`, `postprocess/` Python scripts for power and DEL figures).
-- `fastfarm_simulation/` - FAST.Farm inputs of one example case (run 15001): `15001.fstf`,
+- `controller_floris/` - Python side of the ZeroMQ link with FAST.Farm (`FLORIDyn_<run>.py`).
+- `fastfarm_simulation/` - FAST.Farm inputs of two example cases: run 15001 (FFNN+FFNN) and run 15013
+  (same setup, tower second stage = GPR instead of FFNN, `residualTowerGPR_wd.m`): `<run>.fstf`,
   turbine inputs in `wind_turbines/T1..T3`, inflow file, MLife settings and `.fstf` generators.
   Only the folder structure and the inputs are included, not the outputs.
 - `scripts/` - PowerShell launchers of the run families.
